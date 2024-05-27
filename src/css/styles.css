@@ -3,8 +3,7 @@
 @import url('./2-form.css');
 
 body {
-  margin-top: 20px;
-  margin-left: 20px;
+  margin: 20px;
 }
 ul {
   display: flex;
@@ -12,10 +11,8 @@ ul {
 }
 a {
   font-size: 20px;
-  transition: 500ms;
 }
 a:hover {
   color: tomato;
   text-decoration: underline;
-  transform: scale(1.1);
 }
