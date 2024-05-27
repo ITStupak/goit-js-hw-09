@@ -72,7 +72,7 @@ const gallery = document.querySelector('.gallery');
 
 function galleryTemplate({preview, original, description}) {
     return `<li class="gallery-item">
-  <a class="gallery-link" href=${original}">
+  <a class="gallery-link" href=${original}>
     <img
       class="gallery-image"
       src=${preview}
@@ -88,7 +88,7 @@ function galleriesTemplate(arr) {
 const markup = galleriesTemplate(images);
 gallery.innerHTML = markup;
 
-const lightbox = new SimpleLightbox('.gallery-link', {
+const lightbox = new SimpleLightbox('.gallery-item a', {
     captions: true,
     captionSelector: 'img',
     captionType: 'attr',
