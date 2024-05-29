@@ -64,10 +64,11 @@ const images = [
     description: 'Lighthouse Coast Sea',
   },
 ];
-
+// Додаємо бібліотеку SimpleLightbox
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
+// Знаходимо елемент списку та створюємо розмітку галереї
 const gallery = document.querySelector('.gallery');
 
 function galleryTemplate({preview, original, description}) {
@@ -88,6 +89,7 @@ function galleriesTemplate(arr) {
 const markup = galleriesTemplate(images);
 gallery.innerHTML = markup;
 
+// Налаштовуємо відображення підписів до зображень та інших властивостей options
 const lightbox = new SimpleLightbox('.gallery-item a', {
     captions: true,
     captionSelector: 'img',
@@ -95,4 +97,8 @@ const lightbox = new SimpleLightbox('.gallery-item a', {
     captionsData: 'alt',
     captionPosition: 'bottom',
     captionDelay: 250,
+    animationSpeed: 300,
+    widthRatio: 1,
+    heightRatio: 0.95,
+    disableRightClick: true,
 });
