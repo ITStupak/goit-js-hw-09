@@ -34,7 +34,7 @@ form.addEventListener('input', (e) => {
 });
 
 // При завантаженні сторінки перевіряємо чи є дані у локальному сховищі та використовємо їх для заповнення форми
-window.addEventListener('load', fromLocalStorage);
+window.addEventListener('DOMContentLoaded', fromLocalStorage);
 
 // Додаємо слухача події submit та обробляємо належним чином
 form.addEventListener('submit', (e) => {
@@ -43,9 +43,8 @@ form.addEventListener('submit', (e) => {
         alert('Fill please all fields');
     } else {     
         console.log(formData); 
-        localStorage.clear(); // якщо прибрати очищення сховища, запрацює рядок 37
-        formData.email === "";
-        formData.message === "";
+        localStorage.removeItem('feedback-form-state');
+        formData = { email: "", message: "" };
         form.reset();
     }
 });
